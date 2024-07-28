@@ -8,8 +8,8 @@ const ProductRail = ({ collections }: { collections: any }) => {
 
   return (
     <div className="small:py-12 text-center">
-      <p className="font-normal text-[18px] font-['Schoolbell'] text-[#96ae00] leading-[1.4] mb-[.5rem]">~ Productos Especiales ~</p>
-      <p className="font-bold text-[#2d2a6e] text-[30px] tracking-[-.3px] mb-[.5rem] leading-[38px]">Ofertas Semanales</p>
+      <p className="font-normal text-[24px] text-[#232323] uppercase leading-[1.4] mb-[.5rem]">Productos en tendencia</p>
+      <p className="font-normal text-[#666666] text-[14px] tracking-[-.3px] mb-[20px] leading-[38px] capitalize">Consigue estar a la moda con Joyeria Da Vinci</p>
       <div className="w-full flex justify-center">
         {collections && <Tabs
           type={'collection'}

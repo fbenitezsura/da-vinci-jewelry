@@ -16,24 +16,27 @@ const ProductPreview = ({
   inStock: boolean
 }) => {
 
+  const capitalizeText = (text) => {
+    return text.toLowerCase().replace(/\b\w/g, char => char.toUpperCase());
+  };
+
   return (
     <Link href={`/products/${handle}`} className="group">
-      <div className="relative border-[1px] border-[#ebeff4] rounded-[10px] bg-white">
+      <div className="relative bg-white">
         {!inStock && (
           <div className="absolute top-2 left-1 w-[86px] h-[20px] rounded-[6px] bg-[#5F5F5F] z-30 flex items-center justify-center px-[5px] py-[4px]">
             <span className="text-white text-[12px]">{inStock ? 'Stock' : 'Sin Stock'}</span>
           </div>
         )}
-        <Thumbnail className="p-[20px]" thumbnail={thumbnail} size="square" isFeatured={true} />
-        <div className="h-auto min-h-[115px] p-[16px] rounded-b-lg">
+        <Thumbnail className="" thumbnail={thumbnail} size="square" isFeatured={true} />
+        <div className="h-auto min-h-[115px] rounded-b-lg">
           {/*<Text className="text-[13px] text-[#79819c] text-left">{handle}</Text>*/}
-          <Text className="text-[16px] h-[48px] text-[#2d2a6e] font-normal text-left">{title}</Text>
-          <StarRating rating={5} />
-          <div className="mt-[10px] text-left">
+          <span className="text-[14px] capitalize text-[#232323] font-normal text-center">{capitalizeText(title)}</span>
+          <div className="text-center">
             {price ? (
               <>
                 {price.price_type === "sale" && (
-                  <Text className="line-through text-ui-fg-muted text-[40px]">
+                  <Text className="line-through text-ui-fg-muted text-[14px]">
                     {price.original_price}
                   </Text>
                 )}
@@ -42,20 +45,12 @@ const ProductPreview = ({
                     "text-ui-fg-interactive": price.price_type === "sale",
                   })}
                 >
-                  <ShowNumberFormat className="text-[16px] text-[#ea0d42] font-semibold" value={price.calculated_price} />
+                  <ShowNumberFormat className="text-[14px] text-[#232323] font-normal" value={price.calculated_price} />
                 </Text>
               </>
             ) : (
               <div className="w-20 h-6 animate-pulse bg-gray-100"></div>
             )}
-          </div>
-        </div>
-        <div className="pt-[11px] pr-[21px] pl-[20px] pb-[19px]">
-          <button className="pt-[1px] h-[37px] mb-[10px] w-full px-[10px] md:px-[20px] bg-[#96ae00] leading-[35px] uppercase font-semibold rounded-[50px] text-[13px] text-white">
-            <p>Agregar al carrito</p>
-          </button>
-          <div className="flex flex-col text-left text-[13px] pl-[10px] text-[#79819c]">
-            <p>Proteina: 6g por unidad.</p>
           </div>
         </div>
       </div>

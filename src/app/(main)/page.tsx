@@ -6,9 +6,10 @@ import Slider from "@modules/common/components/slider/index";
 import WhyChoose from '@modules/home/components/whyChoose/index';
 import { Metadata } from "next"
 import { Suspense } from "react"
+import ParallaxSection from "@modules/home/components/parallaxSection";
 
 export const metadata: Metadata = {
-  title: "MaryCris",
+  title: "Joyeria Da Vinci",
   description:
     "A performant frontend ecommerce starter template with Next.js 14 and Medusa.",
 }
@@ -24,10 +25,15 @@ export default async function Home() {
         typeSlider={'banner'}
         data={[{ urlImgDesktop: "/img/banners/banner.webp", urlImgMobile: "/img/banners/banner.webp" }]}
       />
-      <AboutShop />
       <FeaturedCategory collections={collections} />
+      <ParallaxSection
+        title="Hasta 30% de descuento"
+        subtitle="El Glow Up que necesitas"
+        description="Encuentra la joya perfecta para estar a la moda"
+        buttonText="Compra ahora"
+        backgroundImageUrl="/img/parallax/Parallax.webp"
+      />
       <WhyChoose />
-      <AboutUs />
     </>
   )
 }

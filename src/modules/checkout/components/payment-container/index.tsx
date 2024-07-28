@@ -58,7 +58,7 @@ const PaymentContainer: React.FC<PaymentContainerProps> = ({
                 <p>Cuenta: 11.111.111-1</p>
                 <p>Rut: 11.111.111-1</p>
                 <p>Nombre: Huevos</p>
-                <p>Email: clientes@marycris.cl</p>
+                <p>Email: clientes@davinci.cl</p>
               </div>
             </div>
             <span className="justify-self-end text-gray-700">

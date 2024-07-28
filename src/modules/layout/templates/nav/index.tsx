@@ -20,7 +20,7 @@ const Nav = () => {
 
   return (
     <div className="sticky top-0 inset-x-0 z-50 group">
-      <div className="h-[38px] bg-[#2d2a6e] text-white text-[13px] flex justify-around items-center">
+      <div className="h-[38px] bg-[#232323] text-white text-[13px] flex justify-around items-center">
         <div className="hidden md:flex justify-between items-center">
           <a href="https://www.facebook.com/Mari-Cris" className="cursor-pointer" target="_blank">
             <svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" className="h-[14px] w-[14px] mr-2" fill="white">
@@ -56,7 +56,7 @@ const Nav = () => {
           <div className="flex items-center h-full">
             <Link
               href="/"
-              className="txt-compact-xlarge-plus text-[#4D5574] uppercase"
+              className="txt-compact-xlarge-plus text-[26px] text-[#000] uppercase font-great-vibes"
             >
               {process.env.NEXT_PUBLIC_NAME_ECOMMERCE}
             </Link>

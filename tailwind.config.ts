@@ -72,6 +72,7 @@ module.exports = {
           "Ubuntu",
           "sans-serif",
         ],
+        'great-vibes': ['"Great Vibes"', 'cursive'],
       },
       keyframes: {
         ring: {
