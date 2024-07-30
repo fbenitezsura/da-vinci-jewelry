@@ -40,7 +40,7 @@ const SortProducts = ({ sortBy, setSortBy, refinementList, setRefinementList }: 
   }
 
   return (
-    <div className="content-container md:max-w-[1110px] h-[56px] w-full flex justify-between md:justify-end items-center bg-white md:ml-[15px] md:pr-[10px] rounded-md">
+    <div className="content-container bg-[#F5F5F5] md:max-w-[1110px] h-[56px] w-full flex justify-between md:justify-end items-center bg-white md:ml-[15px] md:pr-[10px] rounded-md">
       <Dropdown
         title=""
         items={sortOptions}

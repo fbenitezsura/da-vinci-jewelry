@@ -42,9 +42,11 @@ export default function Dropdown({
     readonly variant?: keyof typeof variants
 }) {
 
+    console.log('items',items)
+
     return (
         <Menu>
-            <MenuButton className="inline-flex items-center gap-3 rounded-md border-[1px] py-1.5 w-auto text-sm/6 font-semibold text-[#4D5574] shadow-inner shadow-white/10 focus:outline-none data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white">
+            <MenuButton className="inline-flex w-52 items-center gap-3  border-[1px] py-1.5 px-2 text-sm/6 font-semibold text-[#acaaa6] shadow-inner shadow-white/10 focus:outline-none bg-[#ffffff80] data-[focus]:outline-1 data-[focus]:outline-white">
                 {value.label}
                 <TriangleDownMini className="size-4 fill-white/60" />
             </MenuButton>
@@ -58,14 +60,22 @@ export default function Dropdown({
             >
                 <MenuItems
                     anchor="bottom end"
-                    className="w-52 origin-top-right rounded-xl border border-white/5 bg-white/5 p-1 text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none"
+                    className="w-52 origin-top-right border border-[#acaaa6] bg-[#F5F5F5] text-sm/6 text-white [--anchor-gap:var(--spacing-1)] focus:outline-none"
                 >
-                    <MenuItem>
-                        <button className="group flex w-full items-center gap-2 rounded-lg py-1.5 px-3 data-[focus]:bg-white/10">
-                            Edit
-                            <kbd className="ml-auto hidden font-sans text-xs text-white/50 group-data-[focus]:inline">⌘E</kbd>
-                        </button>
-                    </MenuItem>
+                    {items.map((item, index) => {
+                        return (
+                            <MenuItem key={index}>
+                                <button
+                                    onClick={() => handleChange(item)}
+                                    className={clsx(
+                                        "group flex w-full items-center gap-2 py-1.5 px-3 text-[#acaaa6] hover:bg-[#ffffff80]",
+                                    )}
+                                >
+                                    {item.label}
+                                </button>
+                            </MenuItem>
+                        )
+                    })}
                 </MenuItems>
             </Transition>
         </Menu>
